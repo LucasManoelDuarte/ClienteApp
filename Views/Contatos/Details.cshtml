@@ -1,0 +1,36 @@
+﻿@model ClienteApp.Models.Contato
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Contatos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            ID do Cliente
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cliente.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            E-mail
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            Telefone
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ClienteId">Editar</a> |
+    <a asp-action="Index">Voltar para a lista</a>
+</div>

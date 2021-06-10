@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ClienteApp.Models.Contato>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Contatos</h1>
+
+<p>
+    <a asp-action="Create">Adicionar novo contato</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID do Cliente
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Telefone
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClienteId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ClienteId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClienteId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
